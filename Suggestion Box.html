@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buzón de Sugerencias</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery & Bootstrap -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #f0f4ff, #ffffff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .suggestion-wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .suggestion-box {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .suggestion-box h1 {
+      font-size: 1.8rem;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .suggestion-box p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    #btn {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      background: linear-gradient(to right, #0d6efd, #0a58ca);
+      border: none;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    #btn:hover {
+      background: linear-gradient(to right, #0a58ca, #084298);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="suggestion-wrapper">
+    <div class="suggestion-box">
+      <h1>📬 Buzón de Sugerencias</h1>
+      <p>Tu opinión es muy importante para nosotros. ¡Haz clic abajo para dejar tu sugerencia!</p>
+      <button id="btn">Envianos tu sugerencia!</button>
+    </div>
+  </div>
+
+  <!-- Jira Issue Collector -->
+  <script type="text/javascript">
+    window.ATL_JQ_PAGE_PROPS = {
+      "triggerFunction": function(showCollectorDialog) {
+        jQuery("#btn").click(function(e) {
+          e.preventDefault();
+          showCollectorDialog();
+        });
+      }
+    };
+  </script>
+  <script type="text/javascript" src="https://masimo.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-yl7qth/b/0/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=5e854a00"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
